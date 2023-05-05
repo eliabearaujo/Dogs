@@ -22,8 +22,8 @@ const LoginForm = () => {
 
   //Retorna o formulario
   return (
-    <section>
-      <h1>Login</h1>
+    <section className="animeLeft">
+      <h1 className="title">Login</h1>
       <form action="" onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="userName" {...userName} />
         <Input label="Senha" type="password" name="password" {...password} />
