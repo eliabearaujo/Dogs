@@ -11,10 +11,13 @@ const useForm = (type) => {
   const [error, setError] = React.useState(null);
 
   function validate(value) {
-    if (type === false) return true;
+    if (type === false) return true; //Nao precisa de validacao
     if (value.length === 0) {
       setError('Preencha um valor');
       return false;
+      //Se o tipo existir e o test for verdadeiro, nega o test e pula esse if.
+      //Se o tipo existir e o test for falso, nega o falso e faz esse if.
+      //Se o tipo nao exitir pula o if.
     } else if (types[type] && !types[type].regex.test(value)) {
       setError(types[type].message);
       return false;
