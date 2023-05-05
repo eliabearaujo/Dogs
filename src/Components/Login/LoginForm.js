@@ -8,7 +8,7 @@ import { UserContext } from '../../UserContext';
 const LoginForm = () => {
   const userName = useForm();
   const password = useForm();
-  const { userLogin } = React.useContext(UserContext);
+  const { userLogin, error, loading } = React.useContext(UserContext);
 
   //Ao clicarmos para enviar o formulario, faz a validacao,
   //Pega o Token e armazena no localStorage
@@ -27,7 +27,12 @@ const LoginForm = () => {
       <form action="" onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="userName" {...userName} />
         <Input label="Senha" type="password" name="password" {...password} />
-        <Button>Entrar</Button>
+        {loading ? (
+          <Button disabled>Carregando ...</Button>
+        ) : (
+          <Button>Entrar</Button>
+        )}
+        {error && <p>{error}</p>}
       </form>
       <Link to="/login/criar">Cadastro</Link>
     </section>
