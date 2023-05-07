@@ -11,17 +11,13 @@ export const UserStorage = ({ children }) => {
   const [error, setError] = React.useState(null);
   const navigate = useNavigate();
 
-  const userLogout = React.useCallback(
-    async function () {
-      setData(null);
-      setError(null);
-      setLoading(false);
-      setLogin(false);
-      window.localStorage.removeItem('token');
-      navigate('/login');
-    },
-    [navigate]
-  );
+  const userLogout = React.useCallback(async function () {
+    setData(null);
+    setError(null);
+    setLoading(false);
+    setLogin(false);
+    window.localStorage.removeItem('token');
+  }, []);
 
   //Pega as informacoes do usuario atraves do token
 
@@ -64,6 +60,8 @@ export const UserStorage = ({ children }) => {
           if (!response.ok) throw new Error('Token inválido');
           await getUser(token);
           // const json = await response.json();
+        } else {
+          setLogin(false);
         }
       } catch (err) {
         userLogout();

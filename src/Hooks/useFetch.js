@@ -12,13 +12,19 @@ const useFetch = () => {
       setErro(null);
       setLoading(true);
       response = await fetch(url, options);
-      json = response.json();
+      json = await response.json();
+      if (response.ok === false) throw new Error(json.message);
     } catch (err) {
+      setErro(err.message);
+      json = null;
     } finally {
+      setData(json);
+      setLoading(false);
+      return { response, json };
     }
-  });
+  }, []);
 
-  return { data, loading, erro };
+  return { data, loading, erro, request };
 };
 
 export default useFetch;

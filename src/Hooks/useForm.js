@@ -10,6 +10,11 @@ const types = {
     message:
       'A senha precisa ter 1 caracter maiusculo, 1 minusculo e 1 digíto numérico. Com no mínimo 8 caracteres.',
   },
+  password: {
+    regex: /(?=^.{8,}$)((?=.*\d)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
+    message:
+      'A senha precisa ter 1 caracter maiusculo, 1 minusculo e 1 digíto numérico. Com no mínimo 8 caracteres.',
+  },
 };
 const useForm = (type) => {
   const [value, setValue] = React.useState('');
