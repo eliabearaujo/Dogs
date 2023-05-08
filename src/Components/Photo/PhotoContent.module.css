@@ -1,0 +1,21 @@
+.photo {
+  margin: auto;
+  height: 36rem;
+  border-radius: 0.2rem;
+  background: white;
+  display: grid;
+  grid-template-columns: 36rem 20rem;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+}
+
+.details {
+  padding: 2rem 2rem 0 2rem;
+}
+.img {
+  grid-row: 1/4;
+}
+
+.comments {
+  padding: 0 2rem;
+}
