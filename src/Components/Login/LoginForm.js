@@ -7,6 +7,7 @@ import { UserContext } from '../../UserContext';
 import Erro from '../InterfaceElements/Erro';
 import styles from './LoginForm.module.css';
 import stylesBtn from '../Forms/Button.module.css';
+import Head from '../InterfaceElements/Head';
 
 const LoginForm = () => {
   const userName = useForm();
@@ -26,6 +27,8 @@ const LoginForm = () => {
   //Retorna o formulario
   return (
     <section className="animeLeft">
+      <Head title="Login" />
+
       <h1 className="title">Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="userName" {...userName} />
