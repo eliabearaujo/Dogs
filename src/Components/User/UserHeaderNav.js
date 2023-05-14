@@ -15,7 +15,6 @@ const UserHeaderNav = () => {
   const [mobileMenu, setMobileMenu] = React.useState(false);
   const navigate = useNavigate();
 
-  const { matches } = window.matchMedia('(max-width: 40rem)');
   const { pathname } = useLocation();
 
   React.useEffect(() => {
