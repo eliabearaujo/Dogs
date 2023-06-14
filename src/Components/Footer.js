@@ -11,6 +11,7 @@ const Footer = () => {
         jogos.
       </p>
       <p>Eliabe Trajano de Araújo - 125111372575</p>
+      <p>Cleiton Oliveira dos Reis - 125111353476</p>
     </footer>
   );
 };
